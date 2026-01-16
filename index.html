@@ -4,84 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G.R.J. Vitale</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         body {
-            /* Font accademico con grazie */
-            font-family: "Georgia", "Times New Roman", serif;
+            /* 2. SFONDO VERDE FORESTA */
+            background-color: #1a3c34; 
+            color: #d8d8d8; /* Testo grigio perla */
+            font-family: "Inter", sans-serif; /* Font pulito per la lettura */
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            max-width: 800px;
+        }
+
+        /* Contenitore per centrare il tutto mantenendo i margini laterali */
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem;
-            /* Sfondo scuro (quasi nero) e testo grigio chiaro */
-            background-color: #222; 
-            color: #bbb;
+            padding: 40px 20px;
         }
 
-        /* Titoli chiari e non in grassetto */
-        h1, h2 { 
-            font-weight: normal; 
-            color: #eee; 
-            margin-top: 2.5rem;
+        /* 3. LAYOUT HEADER: Nome a sinistra, Menu a destra */
+        header {
+            display: flex;
+            justify-content: space-between; /* Spinge gli elementi agli estremi */
+            align-items: baseline; /* Allinea il testo sulla riga di base */
+            margin-bottom: 80px;
+            padding-top: 20px;
+            flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
         }
-        
-        h1 { margin-top: 0; } /* Rimuove spazio sopra il nome */
 
-        /* Link chiari e sottolineati */
-        a { 
-            color: #eee; 
-            text-decoration: underline; 
+        /* 4. IL NOME GIGANTE E STILIZZATO */
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 5rem; /* Molto grande */
+            margin: 0;
+            line-height: 0.9;
+            color: #0e221d; /* Verde scurissimo (effetto incassato) */
+            text-transform: uppercase;
+            letter-spacing: -2px; /* Lettere vicine per eleganza */
         }
-        
-        a:hover { 
-            color: #fff; 
+
+        /* Stile del Menu */
+        nav {
+            display: flex;
+            gap: 30px; /* Spazio tra i link */
+        }
+
+        nav a {
+            color: #aebdb8; /* Colore verde/grigio chiaro */
             text-decoration: none;
+            font-size: 1.4rem;
+            font-family: "Playfair Display", serif; /* Anche il menu usa il font elegante */
         }
 
-        /* Stile del menu di navigazione */
-        nav { margin-bottom: 4rem; }
-        nav a { 
-            margin-right: 20px; 
-            text-decoration: none; /* Niente sottolineatura nel menu */
+        nav a:hover {
+            color: #fff; /* Diventa bianco al passaggio del mouse */
+        }
+
+        /* Stile dei contenuti (About, Contact) */
+        main {
+            max-width: 700px; /* Limita la larghezza del testo per leggibilità */
+        }
+
+        h2 {
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+            color: #8fa39e; /* Verde salvia per i titoletti */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
             font-size: 1.1rem;
+            margin-top: 0;
+            color: #e0e0e0;
         }
-        nav a:hover { text-decoration: underline; }
 
-        /* Footer per il copyright */
+        /* Link dentro al testo (es. email) */
+        p a, p i {
+            color: #fff;
+            font-style: italic;
+        }
+
         .footer {
-            margin-top: 5rem;
-            font-size: 0.9rem;
-            color: #666;
+            margin-top: 6rem;
+            font-size: 0.85rem;
+            color: #5c756f;
+        }
+
+        /* Adattamento per cellulari */
+        @media (max-width: 700px) {
+            header { flex-direction: column; gap: 20px; }
+            h1 { font-size: 3.5rem; }
+            nav { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>G.R.J. Vitale</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Math</a>
-            <a href="mailto:grj.vitale@gmail.com">Contact</a>
-        </nav>
-    </header>
+    <div class="container">
+        
+        <header>
+            <h1>G.R.J.<br>Vitale</h1>
+            
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Math</a>
+                <a href="mailto:grj.vitale@gmail.com">Contact</a>
+            </nav>
+        </header>
 
-    <main>
-        <h2>About me</h2>
-        <p>
-            Undergraduate student in Mathematics. 
-          
-        </p>
+        <main>
+            <h2>About me</h2>
+            <p>
+                Undergraduate student in Mathematics.
+            </p>
 
-        <h2>Contact</h2>
-        <p>
-            Email me at <i>grj.vitale@</i> followed by <i>gmail.com</i>.
-        </p>
+            <h2>Contact</h2>
+            <p>
+                Email me at <i>grj.vitale@</i> followed by <i>gmail.com</i>.
+            </p>
+        </main>
 
-   
-    </main>
+        <div class="footer">
+            © 2026 G.R.J. Vitale
+        </div>
 
-    <div class="footer">
-        © 2026 G.R.J. Vitale
     </div>
 
 </body>
